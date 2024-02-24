@@ -19,8 +19,8 @@ class coffee(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    conn = sqlite3.connect('coffee.sqlite')
-    cur = conn.cursor()
+    con = sqlite3.connect('coffee.sqlite')
+    cur = con.cursor()
     data_table = cur.execute(f"SELECT * FROM Data").fetchall()
     window = coffee(data_table)
     window.show()
